@@ -172,23 +172,32 @@ $data  = mysqli_fetch_array($query);
 		<br>
 			<h1>Ulasan</h1>
 			<div class="kontener_review">
-				<h5>COPET</h5><h4>[5/5]</h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque sunt mollitia accusamus praesentium? Expedita officiis totam ad laborum, sapiente magni doloremque voluptatibus dicta debitis, perspiciatis labore numquam. Sint, repellendus animi?</p>
-				<hr>
-				<h5>COPET</h5><h4>[3/5]</h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque sunt mollitia accusamus praesentium? Expedita officiis totam ad laborum, sapiente magni doloremque voluptatibus dicta debitis, perspiciatis labore numquam. Sint, repellendus animi?</p>
-				<hr>
+
+			<?php 
+			//import koneksi PDO
+			include('../conn.php');
+			
+			$id_produk_pilihan = $_GET['kd'];
+			$dataMentah = $koneksi_PDO->query("select nama_reviewer, deskripsi_review, rating from pengulas_review where id_produk = $id_produk_pilihan");
+
+			while($eh = $dataMentah->fetch()){
+				echo '<h5>'.$eh['nama_reviewer'].'</h5><h4>['.$eh['rating'].'/5]</h4>';
+				echo '<p>'.$eh['deskripsi_review'].'</p>';
+				echo '<hr>';
+			}
+			
+			
+			
+			?>
 				<button id="tombol_tampil_ulasan" class="btn btn-lg" onclick="tampilForm()">Tulis Ulasan</button>
 				<button id="tutup_tampil_ulasan" class="btn btn-lg" onclick="tutupForm()">Batal</button>
 				<br><br>
 				<form id="form_review" class="form_review" action="submit_form.php" method="POST">
-					<input name="nama_review"class="field_review" type="text" placeholder="Nama Pengulas">
-					<br>
-					<input name="email_review" class="field_review" type="text" placeholder="Email">
+					<input name="nama_review"class="field_review" value="<?php echo $_SESSION['fullname'] ?>"type="text" placeholder="Nama Pengulas" readonly>
 					<br>
 					<input name="skala_rating" class="field_review" min="1" max="5" type="number" placeholder="Masukan Skala Rating 1-5"><br>
 					<textarea placeholder="Tulis Kesan disini" name="deskripsi_review" class="field_review" rows="10" cols="50"></textarea>
-					<input type="hidden" name="passing_produk" value="">
+					<input type="hidden" name="passing_produk" value="<?php echo $_GET['kd']?>">
 					<br>
 					<button class="btn btn-lg" type="submit">Submit Ulasan</button>
 				</form>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 02, 2019 at 05:27 PM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.4
+-- Generation Time: May 02, 2019 at 07:59 PM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -62,6 +62,13 @@ CREATE TABLE `cart` (
   `jumlah` varchar(10) NOT NULL,
   `session` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id_cart`, `tanggal`, `kode`, `nama`, `size`, `color`, `harga`, `qty`, `jumlah`, `session`) VALUES
+('20190422055710', '2019-04-22 05:57:10', '15', 'Kamar Laven', '3 bed', 'modern', '120000', '1', '120000', '20190422055115');
 
 -- --------------------------------------------------------
 
@@ -135,8 +142,7 @@ INSERT INTO `konfirmasi` (`id_kon`, `nopo`, `kd_cus`, `bayar_via`, `tanggal`, `j
 (16, '20170820071826', '20170820071826', '0', '2017-08-21 00:00:00', 220000, '0', 'Belum'),
 (17, '20170820071826', '20170820071826', '0', '2017-08-21 00:00:00', 665000, '0', 'Belum'),
 (18, '20170821073545', '20170821073545', '0', '2017-08-21 08:23:48', 630000, '0', 'Belum'),
-(19, '20170824123653', '20170824123653', '0', '2017-08-24 12:38:58', 489999, '0', 'Belum'),
-(20, '20190422055115', '20190422055115', '0', '2019-05-02 09:30:06', 120000, '0', 'Belum');
+(19, '20170824123653', '20170824123653', '0', '2017-08-24 12:38:58', 489999, '0', 'Belum');
 
 -- --------------------------------------------------------
 
@@ -145,12 +151,21 @@ INSERT INTO `konfirmasi` (`id_kon`, `nopo`, `kd_cus`, `bayar_via`, `tanggal`, `j
 --
 
 CREATE TABLE `pengulas_review` (
-  `email` varchar(100) NOT NULL,
   `nama_reviewer` varchar(100) NOT NULL,
   `id_produk` int(10) NOT NULL,
   `deskripsi_review` varchar(200) NOT NULL,
   `rating` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pengulas_review`
+--
+
+INSERT INTO `pengulas_review` (`nama_reviewer`, `id_produk`, `deskripsi_review`, `rating`) VALUES
+('fake', 13, 'power shell corrupt', 0),
+('fake', 13, 'power shell corrupt', 0),
+('fake', 13, 'baguszzz', 4),
+('fake', 15, 'bagus bro', 4);
 
 -- --------------------------------------------------------
 
@@ -208,8 +223,7 @@ INSERT INTO `po_terima` (`id`, `nopo`, `kd_cus`, `kode`, `tanggal`, `style`, `co
 (34, '20170824123653', '20170824123653', 10, '2017-08-24 12:37:31', '', 'Black', 'All ', 1, 110000),
 (35, '20170824123653', '20170824123653', 16, '2017-08-24 12:37:44', '', 'Red', 'All ', 1, 159999),
 (36, '20170824123653', '20170824123653', 12, '2017-08-24 12:37:55', '', 'White', 'All ', 1, 120000),
-(37, '20170824123653', '20170824123653', 7, '2017-08-24 12:38:39', '', 'Red', 'All ', 1, 100000),
-(38, '20190422055115', '20190422055115', 15, '2019-04-22 05:57:10', '', 'modern', '3 be', 1, 120000);
+(37, '20170824123653', '20170824123653', 7, '2017-08-24 12:38:39', '', 'Red', 'All ', 1, 100000);
 
 -- --------------------------------------------------------
 
@@ -379,13 +393,13 @@ ALTER TABLE `custom`
 -- AUTO_INCREMENT for table `konfirmasi`
 --
 ALTER TABLE `konfirmasi`
-  MODIFY `id_kon` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_kon` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `po_terima`
 --
 ALTER TABLE `po_terima`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `produk`

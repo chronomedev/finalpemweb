@@ -172,12 +172,23 @@ $data  = mysqli_fetch_array($query);
 		<br>
 			<h1>Ulasan</h1>
 			<div class="kontener_review">
-				<h5>COPET</h5><h4>[5/5]</h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque sunt mollitia accusamus praesentium? Expedita officiis totam ad laborum, sapiente magni doloremque voluptatibus dicta debitis, perspiciatis labore numquam. Sint, repellendus animi?</p>
-				<hr>
-				<h5>COPET</h5><h4>[3/5]</h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque sunt mollitia accusamus praesentium? Expedita officiis totam ad laborum, sapiente magni doloremque voluptatibus dicta debitis, perspiciatis labore numquam. Sint, repellendus animi?</p>
-				<hr>
+
+			<?php 
+			//import koneksi PDO
+			include('../conn.php');
+			
+			$id_produk_pilihan = $_GET['kd'];
+			$dataMentah = $koneksi_PDO->query("select nama_reviewer, deskripsi_review, rating from pengulas_review where id_produk = $id_produk_pilihan");
+
+			while($eh = $dataMentah->fetch()){
+				echo '<h5>'.$eh['nama_reviewer'].'</h5><h4>['.$eh['rating'].'/5]</h4>';
+				echo '<p>'.$eh['deskripsi_review'].'</p>';
+				echo '<hr>';
+			}
+			
+			
+			
+			?>
 				<button id="tombol_tampil_ulasan" class="btn btn-lg" onclick="tampilForm()">Tulis Ulasan</button>
 				<button id="tutup_tampil_ulasan" class="btn btn-lg" onclick="tutupForm()">Batal</button>
 				<br><br>

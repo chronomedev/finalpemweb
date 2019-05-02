@@ -14,11 +14,4 @@ include('../libraryPDO.php');
 //     echo 'Terjadi kesalahan data sewaktu di tangkap. Silahkan cek kembali';
 // }
 
-
-
-
-
-
-
-
 ?>

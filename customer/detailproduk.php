@@ -182,13 +182,11 @@ $data  = mysqli_fetch_array($query);
 				<button id="tutup_tampil_ulasan" class="btn btn-lg" onclick="tutupForm()">Batal</button>
 				<br><br>
 				<form id="form_review" class="form_review" action="submit_form.php" method="POST">
-					<input name="nama_review"class="field_review" type="text" placeholder="Nama Pengulas">
-					<br>
-					<input name="email_review" class="field_review" type="text" placeholder="Email">
+					<input name="nama_review"class="field_review" value="<?php echo $_SESSION['fullname'] ?>"type="text" placeholder="Nama Pengulas" readonly>
 					<br>
 					<input name="skala_rating" class="field_review" min="1" max="5" type="number" placeholder="Masukan Skala Rating 1-5"><br>
 					<textarea placeholder="Tulis Kesan disini" name="deskripsi_review" class="field_review" rows="10" cols="50"></textarea>
-					<input type="hidden" name="passing_produk" value="">
+					<input type="hidden" name="passing_produk" value="<?php echo $_GET['kd']?>">
 					<br>
 					<button class="btn btn-lg" type="submit">Submit Ulasan</button>
 				</form>

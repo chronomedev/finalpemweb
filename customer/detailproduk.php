@@ -22,9 +22,11 @@
 	<meta property="og:type" content=""/>
 	<meta property="og:url" content=""/>
 	<meta property="og:image" content=""/>
+	<script src="../js/jquery-1.8.2.js"></script>
 	<!-- end: Facebook Open Graph -->
 
-    <!-- start: CSS --> 
+	<!-- start: CSS --> 
+	<link rel="stylesheet" href="../css/tema.css"/>
     <link href="../css/bootstrap.css" rel="stylesheet">
     <link href="../css/bootstrap-responsive.css" rel="stylesheet">
 	<link href="../css/style.css" rel="stylesheet">
@@ -167,27 +169,32 @@ $data  = mysqli_fetch_array($query);
 		<!--start: Container -->
     	<div class="container">	
       		
-			<hr>
-		
-			<!-- start Clients List 
-			<div class="clients-carousel">
-		
-				<ul class="slides clients">
-					<li><img src="img/logos/1.png" alt=""/></li>
-					<li><img src="img/logos/2.png" alt=""/></li>	
-					<li><img src="img/logos/3.png" alt=""/></li>
-					<li><img src="img/logos/4.png" alt=""/></li>
-					<li><img src="img/logos/5.png" alt=""/></li>
-					<li><img src="img/logos/6.png" alt=""/></li>
-					<li><img src="img/logos/7.png" alt=""/></li>
-					<li><img src="img/logos/8.png" alt=""/></li>
-					<li><img src="img/logos/9.png" alt=""/></li>
-					<li><img src="img/logos/10.png" alt=""/></li>		
-				</ul>
-		
+		<br>
+			<h1>Ulasan</h1>
+			<div class="kontener_review">
+				<h5>COPET</h5><h4>[5/5]</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque sunt mollitia accusamus praesentium? Expedita officiis totam ad laborum, sapiente magni doloremque voluptatibus dicta debitis, perspiciatis labore numquam. Sint, repellendus animi?</p>
+				<hr>
+				<h5>COPET</h5><h4>[3/5]</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque sunt mollitia accusamus praesentium? Expedita officiis totam ad laborum, sapiente magni doloremque voluptatibus dicta debitis, perspiciatis labore numquam. Sint, repellendus animi?</p>
+				<hr>
+				<button id="tombol_tampil_ulasan" class="btn btn-lg" onclick="tampilForm()">Tulis Ulasan</button>
+				<button id="tutup_tampil_ulasan" class="btn btn-lg" onclick="tutupForm()">Batal</button>
+				<br><br>
+				<form id="form_review" class="form_review" action="submit_form.php" method="POST">
+					<input name="nama_review"class="field_review" type="text" placeholder="Nama Pengulas">
+					<br>
+					<input name="email_review" class="field_review" type="text" placeholder="Email">
+					<br>
+					<input name="skala_rating" class="field_review" min="1" max="5" type="number" placeholder="Masukan Skala Rating 1-5"><br>
+					<textarea placeholder="Tulis Kesan disini" name="deskripsi_review" class="field_review" rows="10" cols="50"></textarea>
+					<input type="hidden" name="passing_produk" value="">
+					<br>
+					<button class="btn btn-lg" type="submit">Submit Ulasan</button>
+				</form>
 			</div>
-			end Clients List -->
-		
+			<hr>	
+			<script src="../js/tampil_ulasan.js"></script>
 			
 		
 		</div>
@@ -257,6 +264,16 @@ $data  = mysqli_fetch_array($query);
 	<!-- end: Footer Menu -->
 
 	<?php include "footer.php"; ?>
+
+<script src="../js/bootstrap.js"></script>
+<script src="../js/flexslider.js"></script>
+<script src="../js/carousel.js"></script>
+<script src="../js/jquery.cslider.js"></script>
+<script src="../js/slider.js"></script>
+<script src="../js/custom.js"></script>
+<script src="../js/tampil_ulasan.js"></script>
+
+
 
 
 </body>

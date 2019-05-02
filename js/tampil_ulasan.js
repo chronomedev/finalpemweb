@@ -14,7 +14,5 @@ function tutupForm(){
     $("#tutup_tampil_ulasan").hide();
 }
 
-
-window.onload = function(){
+    //Jalanin tutup formnya
     tutupForm();
-}

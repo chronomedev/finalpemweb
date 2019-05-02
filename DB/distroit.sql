@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 22 Apr 2019 pada 06.08
--- Versi server: 10.1.37-MariaDB
--- Versi PHP: 7.2.12
+-- Generation Time: May 02, 2019 at 05:27 PM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `bank`
+-- Table structure for table `bank`
 --
 
 CREATE TABLE `bank` (
@@ -36,7 +36,7 @@ CREATE TABLE `bank` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `bank`
+-- Dumping data for table `bank`
 --
 
 INSERT INTO `bank` (`id_bank`, `nama_bank`, `no_rek`, `nasabah`) VALUES
@@ -47,7 +47,7 @@ INSERT INTO `bank` (`id_bank`, `nama_bank`, `no_rek`, `nasabah`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `cart`
+-- Table structure for table `cart`
 --
 
 CREATE TABLE `cart` (
@@ -63,17 +63,10 @@ CREATE TABLE `cart` (
   `session` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data untuk tabel `cart`
---
-
-INSERT INTO `cart` (`id_cart`, `tanggal`, `kode`, `nama`, `size`, `color`, `harga`, `qty`, `jumlah`, `session`) VALUES
-('20190422055710', '2019-04-22 05:57:10', '15', 'Kamar Laven', '3 bed', 'modern', '120000', '1', '120000', '20190422055115');
-
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `custom`
+-- Table structure for table `custom`
 --
 
 CREATE TABLE `custom` (
@@ -92,7 +85,7 @@ CREATE TABLE `custom` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `customer`
+-- Table structure for table `customer`
 --
 
 CREATE TABLE `customer` (
@@ -106,7 +99,7 @@ CREATE TABLE `customer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `customer`
+-- Dumping data for table `customer`
 --
 
 INSERT INTO `customer` (`kd_cus`, `nama`, `alamat`, `no_telp`, `username`, `password`, `gambar`) VALUES
@@ -118,7 +111,7 @@ INSERT INTO `customer` (`kd_cus`, `nama`, `alamat`, `no_telp`, `username`, `pass
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `konfirmasi`
+-- Table structure for table `konfirmasi`
 --
 
 CREATE TABLE `konfirmasi` (
@@ -133,7 +126,7 @@ CREATE TABLE `konfirmasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `konfirmasi`
+-- Dumping data for table `konfirmasi`
 --
 
 INSERT INTO `konfirmasi` (`id_kon`, `nopo`, `kd_cus`, `bayar_via`, `tanggal`, `jumlah`, `bukti_transfer`, `status`) VALUES
@@ -142,12 +135,27 @@ INSERT INTO `konfirmasi` (`id_kon`, `nopo`, `kd_cus`, `bayar_via`, `tanggal`, `j
 (16, '20170820071826', '20170820071826', '0', '2017-08-21 00:00:00', 220000, '0', 'Belum'),
 (17, '20170820071826', '20170820071826', '0', '2017-08-21 00:00:00', 665000, '0', 'Belum'),
 (18, '20170821073545', '20170821073545', '0', '2017-08-21 08:23:48', 630000, '0', 'Belum'),
-(19, '20170824123653', '20170824123653', '0', '2017-08-24 12:38:58', 489999, '0', 'Belum');
+(19, '20170824123653', '20170824123653', '0', '2017-08-24 12:38:58', 489999, '0', 'Belum'),
+(20, '20190422055115', '20190422055115', '0', '2019-05-02 09:30:06', 120000, '0', 'Belum');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `po`
+-- Table structure for table `pengulas_review`
+--
+
+CREATE TABLE `pengulas_review` (
+  `email` varchar(100) NOT NULL,
+  `nama_reviewer` varchar(100) NOT NULL,
+  `id_produk` int(10) NOT NULL,
+  `deskripsi_review` varchar(200) NOT NULL,
+  `rating` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `po`
 --
 
 CREATE TABLE `po` (
@@ -163,7 +171,7 @@ CREATE TABLE `po` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `po_terima`
+-- Table structure for table `po_terima`
 --
 
 CREATE TABLE `po_terima` (
@@ -180,7 +188,7 @@ CREATE TABLE `po_terima` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `po_terima`
+-- Dumping data for table `po_terima`
 --
 
 INSERT INTO `po_terima` (`id`, `nopo`, `kd_cus`, `kode`, `tanggal`, `style`, `color`, `size`, `qty`, `total`) VALUES
@@ -200,12 +208,13 @@ INSERT INTO `po_terima` (`id`, `nopo`, `kd_cus`, `kode`, `tanggal`, `style`, `co
 (34, '20170824123653', '20170824123653', 10, '2017-08-24 12:37:31', '', 'Black', 'All ', 1, 110000),
 (35, '20170824123653', '20170824123653', 16, '2017-08-24 12:37:44', '', 'Red', 'All ', 1, 159999),
 (36, '20170824123653', '20170824123653', 12, '2017-08-24 12:37:55', '', 'White', 'All ', 1, 120000),
-(37, '20170824123653', '20170824123653', 7, '2017-08-24 12:38:39', '', 'Red', 'All ', 1, 100000);
+(37, '20170824123653', '20170824123653', 7, '2017-08-24 12:38:39', '', 'Red', 'All ', 1, 100000),
+(38, '20190422055115', '20190422055115', 15, '2019-04-22 05:57:10', '', 'modern', '3 be', 1, 120000);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `produk`
+-- Table structure for table `produk`
 --
 
 CREATE TABLE `produk` (
@@ -221,7 +230,7 @@ CREATE TABLE `produk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `produk`
+-- Dumping data for table `produk`
 --
 
 INSERT INTO `produk` (`kode`, `nama`, `jenis`, `size`, `color`, `harga`, `keterangan`, `stok`, `gambar`) VALUES
@@ -241,7 +250,7 @@ INSERT INTO `produk` (`kode`, `nama`, `jenis`, `size`, `color`, `harga`, `ketera
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tmp_po_terima`
+-- Table structure for table `tmp_po_terima`
 --
 
 CREATE TABLE `tmp_po_terima` (
@@ -260,7 +269,7 @@ CREATE TABLE `tmp_po_terima` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -272,7 +281,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`user_id`, `username`, `password`, `fullname`, `gambar`) VALUES
@@ -285,110 +294,126 @@ INSERT INTO `user` (`user_id`, `username`, `password`, `fullname`, `gambar`) VAL
 --
 
 --
--- Indeks untuk tabel `bank`
+-- Indexes for table `bank`
 --
 ALTER TABLE `bank`
   ADD PRIMARY KEY (`id_bank`);
 
 --
--- Indeks untuk tabel `cart`
+-- Indexes for table `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`id_cart`);
 
 --
--- Indeks untuk tabel `custom`
+-- Indexes for table `custom`
 --
 ALTER TABLE `custom`
   ADD PRIMARY KEY (`kode`);
 
 --
--- Indeks untuk tabel `customer`
+-- Indexes for table `customer`
 --
 ALTER TABLE `customer`
   ADD PRIMARY KEY (`kd_cus`);
 
 --
--- Indeks untuk tabel `konfirmasi`
+-- Indexes for table `konfirmasi`
 --
 ALTER TABLE `konfirmasi`
   ADD PRIMARY KEY (`id_kon`);
 
 --
--- Indeks untuk tabel `po`
+-- Indexes for table `pengulas_review`
+--
+ALTER TABLE `pengulas_review`
+  ADD KEY `id_produk` (`id_produk`);
+
+--
+-- Indexes for table `po`
 --
 ALTER TABLE `po`
   ADD PRIMARY KEY (`nopo`);
 
 --
--- Indeks untuk tabel `po_terima`
+-- Indexes for table `po_terima`
 --
 ALTER TABLE `po_terima`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `produk`
+-- Indexes for table `produk`
 --
 ALTER TABLE `produk`
   ADD PRIMARY KEY (`kode`);
 
 --
--- Indeks untuk tabel `tmp_po_terima`
+-- Indexes for table `tmp_po_terima`
 --
 ALTER TABLE `tmp_po_terima`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `bank`
+-- AUTO_INCREMENT for table `bank`
 --
 ALTER TABLE `bank`
   MODIFY `id_bank` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `custom`
+-- AUTO_INCREMENT for table `custom`
 --
 ALTER TABLE `custom`
   MODIFY `kode` int(10) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `konfirmasi`
+-- AUTO_INCREMENT for table `konfirmasi`
 --
 ALTER TABLE `konfirmasi`
-  MODIFY `id_kon` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_kon` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT untuk tabel `po_terima`
+-- AUTO_INCREMENT for table `po_terima`
 --
 ALTER TABLE `po_terima`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
--- AUTO_INCREMENT untuk tabel `produk`
+-- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
   MODIFY `kode` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT untuk tabel `tmp_po_terima`
+-- AUTO_INCREMENT for table `tmp_po_terima`
 --
 ALTER TABLE `tmp_po_terima`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `pengulas_review`
+--
+ALTER TABLE `pengulas_review`
+  ADD CONSTRAINT `pengulas_review_ibfk_1` FOREIGN KEY (`id_produk`) REFERENCES `produk` (`kode`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

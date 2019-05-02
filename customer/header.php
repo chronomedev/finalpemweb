@@ -29,7 +29,7 @@
 			            		<ul class="nav">
 			              			<li class="active"><a href="index.php">Home</a></li>
                                     <li class="dropdown">
-			                			<a href="medium.php" class="dropdown-toggle">Product</a>
+			                			<a href="katalog_produk.php" class="dropdown-toggle">Product</a>
 			              			</li>            
                                     <li><a href="detail.php">Cart</a></li>
 			              			<li class="dropdown">

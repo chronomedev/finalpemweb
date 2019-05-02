@@ -180,38 +180,6 @@ $data  = mysqli_fetch_array($query);
 				
 		<!--start: Container -->
     	<div class="container">	
-      		
-			<br>
-			<h1>Ulasan</h1>
-			<div class="kontener_review">
-				<h5>COPET</h5><h4>[5/5]</h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque sunt mollitia accusamus praesentium? Expedita officiis totam ad laborum, sapiente magni doloremque voluptatibus dicta debitis, perspiciatis labore numquam. Sint, repellendus animi?</p>
-				<hr>
-				<h5>COPET</h5><h4>[3/5]</h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque sunt mollitia accusamus praesentium? Expedita officiis totam ad laborum, sapiente magni doloremque voluptatibus dicta debitis, perspiciatis labore numquam. Sint, repellendus animi?</p>
-				<hr>
-				<button id="tombol_tampil_ulasan" class="btn btn-lg" onclick="tampilForm()">Tulis Ulasan</button>
-				<button id="tutup_tampil_ulasan" class="btn btn-lg" onclick="tutupForm()">Batal</button>
-				<br><br>
-				<form id="form_review" class="form_review" action="submit_form.php" method="POST">
-					<input name="nama_review"class="field_review" type="text" placeholder="Nama Pengulas">
-					<br>
-					<input name="email_review" class="field_review" type="text" placeholder="Email">
-					<br>
-					<input name="skala_rating" class="field_review" min="1" max="5" type="number" placeholder="Masukan Skala Rating 1-5"><br>
-					<textarea placeholder="Tulis Kesan disini" name="deskripsi_review" class="field_review" rows="10" cols="50"></textarea>
-					<input type="hidden" name="passing_produk" value="">
-					<br>
-					<button class="btn btn-lg" type="submit">Submit Ulasan</button>
-				</form>
-			</div>
-			<hr>	
-			
-		
-
-		
-			
-		
 		</div>
 		<!--end: Container-->	
 
@@ -289,7 +257,6 @@ $data  = mysqli_fetch_array($query);
 <script src="js/jquery.cslider.js"></script>
 <script src="js/slider.js"></script>
 <script def src="js/custom.js"></script>
-<script src="js/tampil_ulasan.js"></script>
 <!-- end: Java Script -->
 
 </body>

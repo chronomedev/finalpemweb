@@ -1,0 +1,24 @@
+/* kelas tema untuk custom css
+website */
+
+.kontener_review{
+
+    border-style: solid;
+    border-color: burlywood;
+    width: 100%;
+    height: 100%;
+    padding: 2%;
+
+
+}
+
+
+.form_review{
+    width: 100%;
+    height: 100%;
+}
+
+.field_review{
+    width: 50%;
+
+}

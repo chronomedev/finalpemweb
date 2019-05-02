@@ -29,7 +29,7 @@
 			            		<ul class="nav">
 			              			<li class="active"><a href="index.php">Home</a></li>
                                     <li>
-			                			<a href="medium.php">Produk</a>
+			                			<a href="katalog_produk.php">Produk</a>
 			              			</li>
                                     <li><a href="profil.php">About Us</a></li>
 			              			<li class="dropdown">

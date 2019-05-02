@@ -194,7 +194,7 @@ $data  = mysqli_fetch_array($query);
 				</form>
 			</div>
 			<hr>	
-			<script src="../js/tampil_ulasan.js"></script>
+			
 			
 		
 		</div>
@@ -272,6 +272,7 @@ $data  = mysqli_fetch_array($query);
 <script src="../js/slider.js"></script>
 <script src="../js/custom.js"></script>
 <script src="../js/tampil_ulasan.js"></script>
+
 
 
 

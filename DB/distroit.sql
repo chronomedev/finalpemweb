@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 02, 2019 at 07:59 PM
+-- Generation Time: May 03, 2019 at 06:12 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -62,13 +62,6 @@ CREATE TABLE `cart` (
   `jumlah` varchar(10) NOT NULL,
   `session` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`id_cart`, `tanggal`, `kode`, `nama`, `size`, `color`, `harga`, `qty`, `jumlah`, `session`) VALUES
-('20190422055710', '2019-04-22 05:57:10', '15', 'Kamar Laven', '3 bed', 'modern', '120000', '1', '120000', '20190422055115');
 
 -- --------------------------------------------------------
 
@@ -142,7 +135,11 @@ INSERT INTO `konfirmasi` (`id_kon`, `nopo`, `kd_cus`, `bayar_via`, `tanggal`, `j
 (16, '20170820071826', '20170820071826', '0', '2017-08-21 00:00:00', 220000, '0', 'Belum'),
 (17, '20170820071826', '20170820071826', '0', '2017-08-21 00:00:00', 665000, '0', 'Belum'),
 (18, '20170821073545', '20170821073545', '0', '2017-08-21 08:23:48', 630000, '0', 'Belum'),
-(19, '20170824123653', '20170824123653', '0', '2017-08-24 12:38:58', 489999, '0', 'Belum');
+(19, '20170824123653', '20170824123653', '0', '2017-08-24 12:38:58', 489999, '0', 'Belum'),
+(20, '20190422055115', '20190422055115', '0', '2019-05-03 16:19:13', 100000, '0', 'Belum'),
+(21, '20190422055115', '20190422055115', '0', '2019-05-03 16:24:25', 6790000, '0', 'Belum'),
+(22, '20190422055115', '20190422055115', '0', '2019-05-03 16:45:38', 6790000, '0', 'Belum'),
+(23, '20190422055115', '20190422055115', '0', '2019-05-03 16:46:00', 120000, '0', 'Belum');
 
 -- --------------------------------------------------------
 
@@ -223,7 +220,11 @@ INSERT INTO `po_terima` (`id`, `nopo`, `kd_cus`, `kode`, `tanggal`, `style`, `co
 (34, '20170824123653', '20170824123653', 10, '2017-08-24 12:37:31', '', 'Black', 'All ', 1, 110000),
 (35, '20170824123653', '20170824123653', 16, '2017-08-24 12:37:44', '', 'Red', 'All ', 1, 159999),
 (36, '20170824123653', '20170824123653', 12, '2017-08-24 12:37:55', '', 'White', 'All ', 1, 120000),
-(37, '20170824123653', '20170824123653', 7, '2017-08-24 12:38:39', '', 'Red', 'All ', 1, 100000);
+(37, '20170824123653', '20170824123653', 7, '2017-08-24 12:38:39', '', 'Red', 'All ', 1, 100000),
+(38, '20190422055115', '20190422055115', 11, '2019-05-03 16:19:01', '', 'Victorian', '2 be', 1, 100000),
+(39, '20190422055115', '20190422055115', 14, '2019-05-03 16:24:19', '', 'Tradsional', '2bed', 1, 6790000),
+(40, '20190422055115', '20190422055115', 14, '2019-05-03 16:45:11', '', 'Medium', '2bed', 1, 6790000),
+(41, '20190422055115', '20190422055115', 9, '2019-05-03 16:45:56', '', 'Medium', '1 be', 1, 120000);
 
 -- --------------------------------------------------------
 
@@ -248,17 +249,17 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`kode`, `nama`, `jenis`, `size`, `color`, `harga`, `keterangan`, `stok`, `gambar`) VALUES
-(5, 'Cool', 'VIP', '2 bed', 'Vintage', 95000, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ', 4, 'gambar_produk/kamar1.jpg'),
+(5, 'Cool', 'Classic', '2 bed', 'Vintage', 95000, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ', 4, 'gambar_produk/wallpaper code 2b.jpg'),
 (6, 'Kamar Kencana', 'VVIP', '2 bed', 'Vintage', 105000, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ', 5, 'gambar_produk/kamar2.jpg'),
 (7, 'Kamar Raflessia', 'Budget', '3 bed', 'Modern', 100000, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ', 4, 'gambar_produk/kamar3.jpg'),
 (8, 'Black Dragon', 'Budget', '2 Bed', 'Nautical', 110000, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ', 1, 'gambar_produk/kamar4.jpg'),
-(9, 'Kamar Galaxy', 'Medium', '1 bed', 'vintage', 120000, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ', 8, 'gambar_produk/kamar5.jpg'),
+(9, 'Kamar Galaxy', 'Medium', '1 bed', 'vintage', 120000, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ', 7, 'gambar_produk/kamar5.jpg'),
 (10, 'Kamar Soka', 'Budget', '2 bed', 'rustic', 110000, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ', 9, 'gambar_produk/kamar6.jpg'),
-(11, 'Kamar Violet', 'standart', '2 bed', 'Victorian', 100000, 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classi', 10, 'gambar_produk/kamar7.jpg'),
+(11, 'Kamar Violet', 'standart', '2 bed', 'Victorian', 100000, 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classi', 9, 'gambar_produk/kamar7.jpg'),
 (12, 'Kamar Melati', 'Medium', '2 bed', 'modern', 120000, 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classi', 6, 'gambar_produk/kamar8.jpg'),
 (13, 'Kamar Violet', 'Budget', '2 bed', 'Vintage', 90000, 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classi', 7, 'gambar_produk/kamar9.jpg'),
-(14, 'Kamar Kenanga', 'Medium', '2bed', 'Tradsional', 6790000, 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classi', 15, 'gambar_produk/kamar10.jpg'),
-(15, 'Kamar Lavender', 'Classic', '3 bed', 'modern', 120000, 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classi', 6, 'gambar_produk/kamar11.jpg'),
+(14, 'Kamar Kenanga', 'Medium', '2bed', 'Tradsional', 6790000, 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classi', 13, 'gambar_produk/kamar10.jpg'),
+(15, 'Kamar Lavender', 'Classic', '3 bed', 'modern', 120000, 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classi', 7, 'gambar_produk/kamar11.jpg'),
 (16, 'Kamar Lactus', 'VIP', '2 bed', 'Minimalis', 159999, 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classi', 11, 'gambar_produk/kamar12.jpg');
 
 -- --------------------------------------------------------
@@ -393,13 +394,13 @@ ALTER TABLE `custom`
 -- AUTO_INCREMENT for table `konfirmasi`
 --
 ALTER TABLE `konfirmasi`
-  MODIFY `id_kon` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_kon` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `po_terima`
 --
 ALTER TABLE `po_terima`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `produk`

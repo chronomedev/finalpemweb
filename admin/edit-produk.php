@@ -195,11 +195,14 @@ $_SESSION['start_time'] = time();
 						   <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Jenis</label>
 							    <div class="col-sm-3">
-                            <select id="jenis" name="jenis" value="<?php echo $row['jenis']; ?>" class="form-control" required>
-                            <option value="T-Shirt">T-Shirt</option>
-                            <option value="Kemeja">Kemeja</option>
-                            <option value="Sweater">Sweater</option>
-                            <option value="Kaos Polo">Kaos Pol</option>
+                                <p style="float:left;">Jenis Produk sebelumnya: <?php echo $row['jenis']; ?></p>
+                            <select id="jenis" name="jenis" value="" class="form-control" required>
+                            <option value="Classic">Classic</option>
+                            <option value="Budget">Budget</option>
+                            <option value="standart">Standart</option>
+                            <option value="Medium">Medium</option>
+                            <option value="VIP">VIP</option>
+                            <option value="VVIP">VVIP</option>
                             </select>
                               
                             </div>
@@ -232,9 +235,14 @@ $_SESSION['start_time'] = time();
                               <label class="col-sm-2 col-sm-2 control-label">Foto Sebelumnya</label>
                             
                               <div class="col-sm-3">
-                            <img src="<?php echo $row['gambar']; ?>" class="img-rounded" width="150" height="200" style="border: 2px solid #666;" /> 
+                            <img src="<?php echo $row['gambar']; ?>" class="img-rounded" width="150" height="200" style="border: 2px solid #666;" />
+                            <br>
+                            <p>Pilih Gambar baru</p>
+                            <input type="file" name="nama_file"> 
                             </div>
+
                           </div>
+                          
                         
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label"></label>

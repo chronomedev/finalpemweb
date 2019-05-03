@@ -196,8 +196,8 @@ $_SESSION['start_time'] = time();
                         <th><center>Customer </center></th>
                         <th><center>Produk </center></th>
                         <th><center>Tanggal </center></th>
-                        <th><center>Style </center></th>
-                        <th><center>Color </center></th>
+
+                        <th><center>Tipe Produk</center></th>
                         <th><center>Size </center></th>
                         <th><center>Qty </center></th>
                         <th><center>Total </center></th>
@@ -215,13 +215,12 @@ $_SESSION['start_time'] = time();
                     <td><a href="detail-customer.php?hal=edit&kd=<?php echo $data['kd_cus'];?>"><span class="glyphicon glyphicon-user"></span> <?php echo $data['kd_cus'];?></td>
                     <td><a href="detail-produk.php?hal=edit&kd=<?php echo $data['kode'];?>"><span class="glyphicon glyphicon-tag"></span> <?php echo $data['kode'];?></td>
                     <td><center><?php echo $data['tanggal'];?></center></td>
-                    <td><center><?php echo $data['style'];?></center></td>
                     <td><center><?php echo $data['color'];?></center></td>
                     <td><center><?php echo $data['size'];?></center></td>
                     <td><center><?php echo $data['qty'];?></center></td>
                     <td>Rp. <?php echo number_format($data['total'],2,",",".");?></td>
                     <td><center><div id="thanks"><a class="btn btn-sm btn-success" data-placement="bottom" data-toggle="tooltip" title="simpan ke PO kirim" href="input-po-kirim.php?hal=tambah&nopo=<?php echo $data['id'];?>"><span class="glyphicon glyphicon-floppy-disk"></span></a> 
-                    <a class="btn btn-sm btn-primary" data-placement="bottom" data-toggle="tooltip" title="Edit PO Terima" href="edit-po-terima.php?hal=edit&kode=<?php echo $data['id'];?>"><span class="glyphicon glyphicon-edit"></span></a>  
+                    <!-- <a class="btn btn-sm btn-primary" data-placement="bottom" data-toggle="tooltip" title="Edit PO Terima" href="edit-po-terima.php?hal=edit&kode=<?php echo $data['id'];?>"><span class="glyphicon glyphicon-edit"></span></a>   -->
                     <a onclick="return confirm ('Yakin hapus PO <?php echo $data['nopo'];?>.?');" class="btn btn-sm btn-danger tooltips" data-placement="bottom" data-toggle="tooltip" title="Hapus PO Terima" href="po-terima.php?hal=hapus&kd=<?php echo $data['id'];?>"><span class="glyphicon glyphicon-trash"></a></center></td></tr></div>
                  <?php   
               } 

@@ -172,7 +172,7 @@ $_SESSION['start_time'] = time();
                         <th><center>Kode Produk </center></th>
                         <th><center>Tanggal </center></th>
                         <th><center>Style </center></th>
-                        <th><center>Color </center></th>
+                        <th><center>Tipe Ruangan</center></th>
                         <th><center>Size </center></th>
                         <th><center>Qty </center></th>
                         <th><center>Total </center></th>
@@ -193,8 +193,8 @@ $_SESSION['start_time'] = time();
                     <td><center><?php echo $data['qty'];?></center></td>
                     <td><center>Rp. <?php echo number_format($data['total'],2,",",".");?></center></td>
                     <td><center><div id="thanks"><a class="btn btn-sm btn-danger" data-placement="bottom" data-toggle="tooltip" title="Cetak Invoice" href="cetak-po.php?hal=cetak&kd=<?php echo $data['id'];?>"><span class="glyphicon glyphicon-print"></span></a> 
-                    <a class="btn btn-sm btn-success" data-placement="bottom" data-toggle="tooltip" title="Status PO" href="status-po.php?hal=status&kd=<?php echo $data['nopo'];?>"><span class="glyphicon glyphicon-tag"></span></a> 
-                    <a class="btn btn-sm btn-primary" data-placement="bottom" data-toggle="tooltip" title="Edit PO Terima" href="edit-po-terima.php?hal=edit&kode=<?php echo $data['id'];?>"><span class="glyphicon glyphicon-edit"></span></a>  
+                    
+                    
                     </div></center></td>
                     <!--<td><center><?php
                             /**if($data['status'] == 'tetap'){

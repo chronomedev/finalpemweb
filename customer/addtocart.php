@@ -17,7 +17,7 @@ if (empty($_SESSION['username'])){
                 $kode        = $row['kode'];
                 $nama        = $row['nama'];
                 $size        = $row['size'];
-                $color       = $row['color'];
+                $tipe_jenis  = $row['jenis'];
                 $harga       = $row['harga'];
                 $stock       = $row['stok'];
                 $qty         = 1;
@@ -35,7 +35,7 @@ if (empty($_SESSION['username'])){
 	                } else {
                 
 						$insert = mysqli_query($koneksi, "INSERT INTO cart(id_cart, tanggal, kode, nama, size, color, harga, qty, jumlah, session)
-						                                  VALUES('$nomor', '$tanggal', '$kode', '$nama', '$size', '$color', '$harga', '$qty', '$jumlah', '$session');") or die(mysqli_error());
+						                                  VALUES('$nomor', '$tanggal', '$kode', '$nama', '$size', '$tipe_jenis', '$harga', '$qty', '$jumlah', '$session');") or die(mysqli_error());
 						
                          if($insert){
                           $qu			= mysqli_query($koneksi, "UPDATE produk SET stok=(stok-'$qty') WHERE kode='$kode'");

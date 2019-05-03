@@ -172,7 +172,7 @@ $_SESSION['start_time'] = time();
                         <th><center>Kode Produk </center></th>
                         <th><center>Tanggal </center></th>
                         <th><center>Style </center></th>
-                        <th><center>Color </center></th>
+                        <th><center>Tipe Ruangan</center></th>
                         <th><center>Size </center></th>
                         <th><center>Qty </center></th>
                         <th><center>Total </center></th>

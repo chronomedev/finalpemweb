@@ -77,8 +77,9 @@
 		echo "Tidak ada produk!";
 	}else{
 		while($data = mysqli_fetch_assoc($sql)){
-                    ?>
-        		<div class="span4"	>
+					?>
+				
+        		<div class="span4">
           			<div class="icons-box">
                         <div class="title"><h3><?php echo $data['nama']; ?></h3></div>
                         <img src="admin/<?php echo $data['gambar']; ?>" width="200" height="200">

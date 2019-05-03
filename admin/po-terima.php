@@ -196,8 +196,8 @@ $_SESSION['start_time'] = time();
                         <th><center>Customer </center></th>
                         <th><center>Produk </center></th>
                         <th><center>Tanggal </center></th>
-                        <th><center>Style </center></th>
-                        <th><center>Color </center></th>
+
+                        <th><center>Tipe Produk</center></th>
                         <th><center>Size </center></th>
                         <th><center>Qty </center></th>
                         <th><center>Total </center></th>
@@ -215,7 +215,6 @@ $_SESSION['start_time'] = time();
                     <td><a href="detail-customer.php?hal=edit&kd=<?php echo $data['kd_cus'];?>"><span class="glyphicon glyphicon-user"></span> <?php echo $data['kd_cus'];?></td>
                     <td><a href="detail-produk.php?hal=edit&kd=<?php echo $data['kode'];?>"><span class="glyphicon glyphicon-tag"></span> <?php echo $data['kode'];?></td>
                     <td><center><?php echo $data['tanggal'];?></center></td>
-                    <td><center><?php echo $data['style'];?></center></td>
                     <td><center><?php echo $data['color'];?></center></td>
                     <td><center><?php echo $data['size'];?></center></td>
                     <td><center><?php echo $data['qty'];?></center></td>

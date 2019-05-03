@@ -179,7 +179,30 @@ $data  = mysqli_fetch_array($query);
 		<!--end: Container-->
 				
 		<!--start: Container -->
+
+		<!-- Container untuk menampung review dari orang -->
     	<div class="container">	
+
+		<br>
+			<h1>Ulasan</h1>
+			<div class="kontener_review">
+
+			<?php 			
+			
+			$id_produk_pilihan = $_GET['kd'];
+			$dataMentah = $koneksi_PDO->query("select nama_reviewer, deskripsi_review, rating from pengulas_review where id_produk = $id_produk_pilihan");
+
+			while($eh = $dataMentah->fetch()){
+				echo '<h5>'.$eh['nama_reviewer'].'</h5><h4>['.$eh['rating'].'/5]</h4>';
+				echo '<p>'.$eh['deskripsi_review'].'</p>';
+				echo '<hr>';
+			}
+			
+			
+			
+			?>
+
+
 		</div>
 		<!--end: Container-->	
 

@@ -199,15 +199,15 @@ $_SESSION['start_time'] = time();
                               
                             </div>
                           </div>
-                          <div class="form-group">
+                          <!-- <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Style</label>
                               <div class="col-sm-3">
-                            <input name="style" type="text" id="style" value="<?php echo $row['style']; ?>" class="form-control" autocomplete="off" required />
+                            <input name="style" type="text" id="style" value="" class="form-control" autocomplete="off" required />
                               
                             </div>
-                          </div>
+                          </div> -->
                           <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Color</label>
+                              <label class="col-sm-2 col-sm-2 control-label">Tipe Produk</label>
                               <div class="col-sm-3">
                             <input name="color" type="text" id="color" value="<?php echo $row['color']; ?>" class="form-control" autocomplete="off" required />
                               

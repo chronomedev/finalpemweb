@@ -220,7 +220,7 @@ $_SESSION['start_time'] = time();
                     <td><center><?php echo $data['qty'];?></center></td>
                     <td>Rp. <?php echo number_format($data['total'],2,",",".");?></td>
                     <td><center><div id="thanks"><a class="btn btn-sm btn-success" data-placement="bottom" data-toggle="tooltip" title="simpan ke PO kirim" href="input-po-kirim.php?hal=tambah&nopo=<?php echo $data['id'];?>"><span class="glyphicon glyphicon-floppy-disk"></span></a> 
-                    <a class="btn btn-sm btn-primary" data-placement="bottom" data-toggle="tooltip" title="Edit PO Terima" href="edit-po-terima.php?hal=edit&kode=<?php echo $data['id'];?>"><span class="glyphicon glyphicon-edit"></span></a>  
+                    <!-- <a class="btn btn-sm btn-primary" data-placement="bottom" data-toggle="tooltip" title="Edit PO Terima" href="edit-po-terima.php?hal=edit&kode=<?php echo $data['id'];?>"><span class="glyphicon glyphicon-edit"></span></a>   -->
                     <a onclick="return confirm ('Yakin hapus PO <?php echo $data['nopo'];?>.?');" class="btn btn-sm btn-danger tooltips" data-placement="bottom" data-toggle="tooltip" title="Hapus PO Terima" href="po-terima.php?hal=hapus&kd=<?php echo $data['id'];?>"><span class="glyphicon glyphicon-trash"></a></center></td></tr></div>
                  <?php   
               } 

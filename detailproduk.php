@@ -133,18 +133,7 @@ $data  = mysqli_fetch_array($query);
                         <tr>
                         	<td></td>
                         	
-                        	<td><h3>Color</h3>
-                        	<div class="text">
-                              <label class="col-sm-6 col-sm-6 control-label"></label>
-                              <div class="col-sm-6">
-                            <select id="color" name="color" class="form-control" required>
-                            <option value="black">Black</option>
-                            <option value="dark blue">Dark Blue</option>
-                            <option value="red">Red</option>
-                            <option value="grey">Grey</option>
-                            <option value="white">White</option>
-                            
-                            </select>
+                        	
                               
                             </div></div>
                             </td>
